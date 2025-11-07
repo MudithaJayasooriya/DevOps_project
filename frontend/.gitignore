@@ -1,0 +1,20 @@
+# Environment and secret files
+.env
+.env.local
+backend/.env
+frontend/.env
+
+# Dependency folders
+**/node_modules
+
+# Docker
+mongo-data/
+*.pid
+*.seed
+*.tar
+docker-compose.override.yml
+
+# OS-specific
+Thumbs.db
+desktop.ini
+git add .gitignore

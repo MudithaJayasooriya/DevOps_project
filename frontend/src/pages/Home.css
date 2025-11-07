@@ -1,0 +1,336 @@
+.home-container {
+  font-family: 'Segoe UI', sans-serif;
+  color:black;
+}
+
+/* Hero Section */
+.hero {
+  background-image: url('/images/img4.jpeg');
+  background-size: cover;
+  width: 95%;
+  background-position: center;
+  height: 90vh;
+  position: relative;
+  margin-top: 77px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.hero-overlay {
+  background-color: rgba(0, 0, 0, 0.5);
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  text-align: center;
+  padding: 0 20px;
+}
+
+.hero h1 {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+.hero h2 {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+  
+}
+
+.hero p {
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+}
+
+.hero-btn {
+  background-color: #ff6600;
+  padding: 12px 24px;
+  color: white;
+  border: none;
+  text-decoration: none;
+  font-weight: bold;
+  border-radius: 8px;
+  transition: background-color 0.3s;
+}
+
+.hero-btn:hover {
+  background-color: #e65c00;
+}
+
+/* Property Types */
+.property-types {
+  padding: 4rem 2rem;
+  background-color: #f9f9f9;
+  text-align: center;
+}
+
+.property-types h2 {
+  margin-bottom: 2rem;
+  font-size: 2rem;
+  color: #0b0338;
+}
+
+.types-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 2rem;
+}
+
+.type-icon {
+  font-size: 3rem;
+  color: #ff6600;
+  margin-bottom: 10px;
+}
+
+.types-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 1.5rem;
+  padding: 2rem 1rem;
+  text-align: center;
+}
+
+.type-card {
+  background-color: #dfdfee;
+  border-radius: 12px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.05);
+  padding: 1.5rem;
+  transition: transform 0.2s ease;
+}
+
+.type-card:hover {
+  transform: translateY(-5px);
+}
+
+
+/* Services */
+.services {
+  padding: 4rem 2rem;
+  text-align: center;
+}
+.services h2 {
+  margin-bottom: 2rem;
+  font-size: 2rem;
+  color: #0b0338;
+}
+
+.services-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  justify-content: center;
+}
+
+.service-card {
+  background: #dfdfee;
+  padding: 1.5rem;
+  border-radius: 150px;
+  width: 280px;
+  box-shadow: 0 0 10px rgba(238, 28, 28, 0.05);
+}
+
+/* src/components/StatsSection.css */
+
+.stats-section {
+  background-color: #1a1a1a; /* Dark background color */
+  color: #fff; /* White text color by default for the section */
+  padding: 4rem 2rem; /* Vertical and horizontal padding */
+  font-family: 'Arial', sans-serif; /* Example font, use your preferred font */
+}
+
+.stats-content-wrapper {
+  max-width: 1200px; /* Max width to contain content */
+  margin: 0 auto; /* Center the content wrapper */
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Center items horizontally within the wrapper */
+  text-align: center; /* Center text within text blocks */
+}
+
+.stats-text-area {
+  margin-bottom: 3rem; /* Space below the heading/subheading */
+  max-width: 800px; /* Limit width of the main text for readability */
+}
+
+.stats-subheading {
+  font-size: 0.9rem;
+  color: #a0a0a0; /* Lighter grey for "ABOUT US" */
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 0.5rem;
+  font-weight: bold;
+}
+
+.stats-main-heading {
+  font-size: 1.5rem; /* Adjust font size as needed */
+  font-weight: 500; /* Lighter weight for the main heading */
+  line-height: 1.4;
+  color: #e0e0e0; /* Slightly off-white for the main text */
+}
+
+.stats-line-divider {
+  width: 150px; /* Length of the line */
+  height: 1px;
+  background-color: #ff6600; /* Orange color for the line (matching your button color) */
+  margin-bottom: 1.5rem; /* Space below the line */
+}
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* Four columns */
+  gap: 2rem; /* Gap between grid items */
+  width: 100%; /* Ensure grid takes full width of its parent */
+  max-width: 1000px; /* Optional: limit grid width for better spacing on very wide screens */
+}
+
+.stat-item {
+  display: flex;
+  margin-left: 210px;;
+  flex-direction: column;
+  align-items: center; /* Center content within each stat item */
+}
+
+.stat-number {
+  font-size: 3rem; /* Large font size for numbers */
+  font-weight: bold;
+  color: #ff6600; /* Orange color for the numbers */
+  margin-bottom: 0.5rem;
+  font-size: 2rem; /* Adjusted for better visibility */
+}
+
+.stat-description {
+  font-size: 0.9rem;
+  color: #a0a0a0; /* Lighter grey for descriptions */
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  line-height: 1.3;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 992px), (max-width: 576px) {
+  .stats-grid {
+    grid-template-columns: repeat(4, 1fr) !important;
+  }
+}
+
+/* src/components/CallToActionSection.css */
+
+.cta-section {
+  display: flex;
+  flex-direction: row; /* Default to row for desktop */
+  min-height: 500px; /* Adjust height as needed */
+  color: #ffffff; /* White text for contrast */
+  font-family: 'Arial', sans-serif;
+  margin-bottom: 20px; /* Use your preferred font */
+}
+
+.cta-left-column,
+.cta-right-column {
+  flex: 1; /* Each column takes equal width */
+  display: flex;
+  align-items: center; /* Vertically center content */
+  justify-content: center; /* Horizontally center content */
+  padding: 3rem; /* Padding inside each column */
+  background-size: cover; /* Cover the entire area */
+  background-position: center; /* Center the background image */
+  background-repeat: no-repeat;
+  position: relative; /* Needed for the overlay */
+}
+
+/* Add a subtle overlay for better text readability on top of images */
+.cta-left-column::before,
+.cta-right-column::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.4); /* Dark overlay, adjust opacity as needed */
+  z-index: 1; /* Place overlay above background image, below content */
+}
+
+.cta-content {
+  position: relative; /* Bring content above the overlay */
+  z-index: 2;
+  text-align: center; /* Slightly lift content for a modern look */
+  background-color: rgba(12, 2, 32, 0.678);
+  max-width: 450px; /* Limit text width for readability */
+}
+
+/* Background images for each column */
+.cta-left-column {
+  background-image: url('/images/img20.jpeg'); /* REPLACE with your actual image path */
+}
+
+.cta-right-column {
+  background-image: url('/images/imgv1.jpeg'); /* REPLACE with your actual image path */
+}
+
+.cta-heading {
+  font-size: 2.5rem; /* Large heading */
+  font-weight: 600; /* Semi-bold */
+  margin-bottom: 1.5rem;
+  line-height: 1.2;
+  color: #e3e2e7; /* Slightly off-white for headings */
+  text-transform: uppercase;
+}
+
+.cta-description {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  margin-bottom: 2rem;
+  color: #f3eaea;
+  
+}
+
+/* If you decide to add buttons later, here's some styling */
+.cta-button {
+  display: inline-block;
+  background-color: #ff6600; /* Your brand orange */
+  color: #fff;
+  padding: 0.8rem 2rem;
+  border-radius: 5px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+
+.cta-button:hover {
+  background-color: #e65500; /* Darker orange on hover */
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .cta-section {
+    flex-direction: column; /* Stack columns vertically on smaller screens */
+  }
+
+  .cta-left-column,
+  .cta-right-column {
+    min-height: 400px; /* Adjust height for stacked columns */
+    padding: 2.5rem;
+  }
+
+  .cta-heading {
+    font-size: 2rem;
+  }
+
+  .cta-description {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .cta-left-column,
+  .cta-right-column {
+    min-height: 350px; /* Further adjust height */
+    padding: 2rem 1.5rem;
+  }
+
+  .cta-heading {
+    font-size: 1.8rem;
+  }
+}
+

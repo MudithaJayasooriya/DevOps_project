@@ -1,0 +1,122 @@
+
+.auth-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 90vh;
+  background-size:contain;
+  background-position: center;
+  background-repeat: no-repeat; 
+  background-color: #0b0338;
+  
+}
+.signup-container {
+  background-image: url('/images/img1.jpeg'); 
+ background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat; 
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 40px;
+  margin-bottom: 0px
+ 
+ ;
+}
+.login-container {
+  background-image: url('/images/img2.jpeg'); 
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat; 
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 40px;
+  margin-bottom: 0px
+}
+  
+ 
+  .auth-card {
+    width: 90%;
+    max-width: 400px;
+    padding: 20px 30px;
+    background-color: white;
+    border-radius: 15px;
+    box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.1);
+    text-align: center;
+  }
+  
+  .auth-card h2 {
+    margin-bottom: 20px;
+    font-size: 24px;
+    color: #333;
+  }
+  
+  
+  .input-group {
+    margin-bottom: 15px;
+    text-align: left;
+  }
+  
+  .input-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-size: 14px;
+    color: #666;
+  }
+  
+  .input-group input {
+    width: 94%;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    outline: none;
+  }
+  
+  .input-group input:focus {
+    border-color: #ff6600;;
+  }
+  
+  
+  .auth-button {
+    width:100%;
+    padding: 12px;
+    background-color: #0d064d; 
+    color: white;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .auth-button:hover {
+    background-color:#ff6600;;
+  }
+  
+  
+  .auth-footer {
+    margin-top: 15px;
+    font-size: 14px;
+    color: #666;
+  }
+  
+  .auth-footer a {
+    color: #ff6600;;
+    text-decoration: none;
+  }
+  
+  .auth-footer a:hover {
+    text-decoration: underline;
+  }
+  .input-group select {
+  padding: 10px;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}

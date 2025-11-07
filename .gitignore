@@ -1,0 +1,28 @@
+# Dependencies
+node_modules/
+.env
+.env.local
+
+# Build and distribution folders
+dist/
+build/
+out/
+.tmp/
+
+# IDE files
+.vscode/
+.idea/
+*.log
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Docker / Gradle / Misc
+.gradle/
+target/
+__pycache__/
+*.pid
+
+# Ignore local configs
+local.properties
