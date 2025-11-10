@@ -4,29 +4,55 @@ import { Link } from "react-router-dom";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 
-const API_URL = import.meta.env.VITE_API_URL || "http://localhost:3001";
-
 const Sign_up = () => {
   const [username, setName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [notification, setNotification] = useState(null); // { message: string, type: 'success' | 'error' }
   const navigate = useNavigate();
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
 
-    axios.post(`${API_URL}/signup`, { username, email, password })
-      .then((result) => {
-        console.log(result);
-        navigate("/Log_in");
-      })
-      .catch((err) => console.log(err));
+    // Basic frontend validation before sending request
+    if (!username || !email || !password) {
+      setNotification({ message: "Please fill all fields.", type: "error" });
+      return;
+    }
+
+    try {
+      const result = await axios.post("http://localhost:3001/users/signup", { username, email, password });
+
+      if (result.data.status === "success") {
+        setNotification({ message: "User registered successfully!", type: "success" });
+
+        // Redirect after short delay so user can see message
+        setTimeout(() => navigate("/Log_in"), 1500);
+      } else {
+        // Backend returned status but not success (unlikely here)
+        setNotification({ message: result.data.message || "Signup failed", type: "error" });
+      }
+    } catch (err) {
+      // err.response?.data.message is backend error message if available
+      const errorMsg = err.response?.data?.message || "Signup failed. Please try again.";
+      setNotification({ message: errorMsg, type: "error" });
+    }
   };
 
   return (
     <div className="auth-container signup-container">
       <div className='auth-card'>
         <h2>SIGN UP</h2>
+
+        {notification && (
+          <div
+            className={`notification ${notification.type === "success" ? "success" : "error"}`}
+            role="alert"
+          >
+            {notification.message}
+          </div>
+        )}
+
         <form onSubmit={handleSubmit}>
           <div className="input-group">
             <label htmlFor="username">Name</label>
@@ -45,8 +71,11 @@ const Sign_up = () => {
 
           <button type="submit" className="auth-button">SIGN UP</button>
         </form>
+
         <div className="auth-footer">
-          <p>Already have an account? <Link to="/Log_in">LOG IN</Link></p>
+          <p>
+            Already have an account? <Link to="/Log_in">LOG IN</Link>
+          </p>
         </div>
       </div>
     </div>

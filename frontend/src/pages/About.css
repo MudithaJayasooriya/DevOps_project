@@ -1,0 +1,818 @@
+.about1-container {
+  font-family: 'Segoe UI', sans-serif;
+  color:black;
+}
+
+/* Hero Section */
+.hero2 {
+  background-image: url('/images/img7.png');
+  background-size: cover;
+  width: 95%;
+  background-position: center;
+  height: 90vh;
+  position: relative;
+  margin-top: 77px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.hero2-overlay {
+  background-color: rgba(0, 0, 0, 0.5);
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  text-align: center;
+  padding: 0 20px;
+}
+
+.hero2 h1 {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+  margin-right: 500px;
+  max-width: 600px;
+}
+.hero2 h2 {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+ 
+  
+}
+
+.hero2 p {
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+  margin-right: 500px;;
+}
+.about-container {
+  padding: 2rem;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+.amenities-section {
+  background-image: url('/images/img26.png'); /* Replace with your actual image path */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  padding: 3rem 2rem;
+  border-radius: 10px;
+  margin-top: 2rem;
+  text-align: center;
+  color: #fff; /* Optional: if your image is dark, white text will be more readable */
+}
+
+
+.amenities-section h2 {
+  font-size: 2rem;
+  color: white;
+  margin-bottom: 1rem;
+}
+
+.amenities-description {
+  max-width: 600px;
+  margin: 0 auto 2rem;
+  font-size: 1rem;
+  color: #a09d9d;
+}
+
+.amenities-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr); /* 5 items per row */
+  gap: 1.5rem;
+  justify-items: center;
+}
+
+
+.amenity-card {
+  background-color: #dfdfee;
+  border-radius: 10px;
+  padding: 1.5rem;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
+  transition: transform 0.2s ease;
+  
+}
+
+.amenity-card:hover {
+  transform: translateY(-5px);
+}
+
+.amenity-icon {
+  font-size: 2rem;
+  color: #ff6600;
+  margin-bottom: 0.5rem;
+}
+
+.amenity-label {
+  font-size: 0.95rem;
+  color: #333;
+}
+.mission-modern {
+  padding: 4rem 2rem;
+  background-color: #fdfdfd;
+  text-align: center;
+}
+
+.mission-title {
+  font-size: 2rem;
+  color: #2c3e50;
+  margin-bottom: 0.5rem;
+}
+
+.mission-subtitle {
+  max-width: 600px;
+  margin: 0 auto 2.5rem;
+  color: #555;
+  font-size: 1rem;
+}
+
+.mission-cards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
+}
+
+.mission-card {
+  background-color: #dfdfee;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+  padding: 2rem;
+  max-width: 320px;
+  text-align: center;
+  transition: transform 0.3s ease;
+}
+
+.mission-card:hover {
+  transform: translateY(-8px);
+}
+
+.mission-icon {
+  font-size: 2.5rem;
+  color: #ff6600;
+  margin-bottom: 1rem;
+}
+
+.mission-card h3 {
+  font-size: 1.3rem;
+  margin-bottom: 0.8rem;
+  color: #222;
+}
+
+.mission-card p {
+  font-size: 0.95rem;
+  color: #555;
+}
+.mission-card a {
+  display: inline-block;
+  margin-top: 1rem;
+  color: #ff6600;
+  text-decoration: none;
+  font-weight: bold;
+}
+.diamond-gallery {
+  text-align: center;
+  padding: 3rem 2rem;
+  background-color: white;
+}
+
+.diamond-gallery h2 {
+  font-size: 2rem;
+  color: #0b0338;
+  margin-bottom: 0.5rem;
+}
+
+.diamond-gallery p {
+  max-width: 600px;
+  margin: 0 auto 2rem;
+  color: #555;
+  font-size: 1rem;
+}
+
+/* ... (Other CSS remains the same) ... */
+
+.diamond-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.75rem; /* Reduced vertical gap: Changed from 1.5rem to 0.75rem. Adjust as needed. */
+}
+
+.diamond-row {
+  display: flex;
+  gap: 2rem; /* Reduced horizontal gap: Changed from 1.5rem to 0.75rem. Adjust as needed. */
+  justify-content: center;
+}
+
+/* ... (Your existing CSS for .diamond, .diamond-gallery, etc.) ... */
+
+.diamond {
+  width: 200px; /* Or whatever size you've set */
+  height: 200px; /* Or whatever size you've set */
+  overflow: hidden;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+  clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
+  -webkit-clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
+
+  /* Add this transition property to the base .diamond state */
+  /* This tells the browser to animate 'transform' and 'box-shadow' over 0.3 seconds */
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.diamond img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Add a hover state for the .diamond element */
+.diamond:hover {
+  transform: scale(1.05); /* Scales the diamond up by 5% */
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2); /* Makes the shadow more pronounced */
+}
+.choose-gallery-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  padding: 3rem 2rem;
+  background-color: white;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+/* Left side – Why Choose Us */
+.choose-us-section {
+  flex: 1 1 300px;
+  max-width: 700px;
+  height: 500px;
+  margin-top: 25px;
+  background-color: rgb(247, 233, 228);
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+}
+
+.choose-us-section h2 {
+  color: #2c3e50;
+  font-size: 2rem;
+  margin-top: 110px;
+  margin-left: 130px;;
+}
+
+.choose-us-section ul {
+  list-style: none;
+  padding: 0;
+  color: #444;
+  font-size: 1rem;
+  line-height: 3rem;
+  margin-left: 140px;
+}
+
+.choose-us-section li {
+  margin-bottom: 0.5rem;
+}
+
+/* Right side – already styled: only minor tweaks to fit */
+.diamond-gallery {
+  flex: 1 1 300px;
+  background-color: white;
+  padding: 2rem;
+  border-radius: 12px;
+  text-align: center;
+}
+
+/* Optional: scale images a bit smaller for better layout harmony */
+.diamond {
+  width: 180px;
+  height: 180px;
+}
+.agents-section {
+  text-align: center;
+  padding: 3rem 2rem;
+  background-color: #fff;
+}
+
+.agents-section h2 {
+  color: #0b0338;
+  font-size: 2rem;
+  margin-bottom: 2rem;
+}
+
+.agent-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 2rem;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.agent-card {
+  background-color: #f9f9f9;
+  border-radius: 12px;
+  padding: 1.5rem;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+  transition: transform 0.3s ease;
+}
+
+.agent-card:hover {
+  transform: translateY(-5px);
+}
+
+.agent-photo {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  border-radius: 10px;
+  margin-bottom: 1rem;
+}
+
+.agent-card h3 {
+  font-size: 1.2rem;
+  margin-bottom: 0.5rem;
+  color: #333;
+}
+
+.agent-card p {
+  margin: 0.3rem 0;
+  color: #555;
+}
+
+.agent-card a {
+  color: #ff6600;
+  text-decoration: none;
+}
+
+.agent-card a:hover {
+  text-decoration: underline;
+}
+/* About Page Styles */
+.about-page {
+  font-family: "Arial", sans-serif;
+  line-height: 1.6;
+  color: #333;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* Company Story & Mission Section */
+.company-story {
+  padding: 80px 0;
+  background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+}
+
+.story-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: center;
+}
+
+.story-text h1 {
+  font-size: 1.5rem;
+  color: #2c3e50;
+  margin-bottom: 10px;
+  font-weight: 700;
+}
+
+.story-text h2 {
+  font-size: 1.5rem;
+  color: #3498db;
+  margin-bottom: 30px;
+  font-weight: 400;
+}
+
+.mission-statement {
+  font-size: 1.2rem;
+  color: #555;
+  margin-bottom: 25px;
+  font-weight: 500;
+  line-height: 1.7;
+}
+
+.story-text p {
+  margin-bottom: 20px;
+  color: #666;
+  font-size: 1.1rem;
+}
+
+.values {
+  margin-top: 40px;
+}
+
+.values h3 {
+  color: #2c3e50;
+  margin-bottom: 20px;
+  font-size: 1.4rem;
+}
+
+.values ul {
+  list-style: none;
+  padding: 0;
+}
+
+.values li {
+  margin-bottom: 15px;
+  padding-left: 20px;
+  position: relative;
+  color: #555;
+}
+
+.values li::before {
+  content: "✓";
+  position: absolute;
+  left: 0;
+  color: #27ae60;
+  font-weight: bold;
+  font-size: 1.2rem;
+}
+
+.story-image img {
+  width: 100%;
+  height: 400px;
+  object-fit: cover;
+  border-radius: 15px;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+}
+
+/* Experience & Credentials Section */
+.credentials {
+  padding: 80px 0;
+  background: #fff;
+  max-width: 3000px;;
+  
+}
+
+.credentials h2 {
+  text-align: center;
+  font-size: 2rem;
+  color: #2c3e50;
+  margin-bottom: 20px;
+}
+
+.credentials-intro {
+  text-align: center;
+  font-size: 1.2rem;
+  color: #666;
+  margin-bottom: 60px;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* Force 4 in a row */
+  gap: 30px;
+  margin-bottom: 60px;
+  max-width: 1200px;
+}
+
+/* Medium screens: 2 per row */
+@media (max-width: 992px) {
+  .stats-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Small screens: 1 per row */
+@media (max-width: 576px) {
+  .stats-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+
+
+.stat-card {
+  text-align: center;
+  box-sizing: border-box;
+  padding: 40px 20px;
+  background: #f8f9fa;
+  border: 1px solid #ddd;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+  border-radius: 15px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.stat-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+}
+
+.stat-icon {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+}
+
+.stat-number {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #3498db;
+  margin-bottom: 10px;
+}
+
+.stat-label {
+  font-size: 1.1rem;
+  color: #666;
+  font-weight: 500;
+}
+
+.certifications {
+  margin-top: 60px;
+
+
+}
+
+.certifications h3 {
+  text-align: center;
+  font-size: 2rem;
+  color: #2c3e50;
+  margin-bottom: 40px;
+}
+
+.cert-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 30px;
+  
+}
+
+.cert-item {
+  padding: 30px;
+  background: #f8f9fa;
+  border-radius: 10px;
+  border-left: 4px solid #3498db;
+}
+
+.cert-item h4 {
+  color: #2c3e50;
+  margin-bottom: 10px;
+  font-size: 1.2rem;
+}
+
+.cert-item p {
+  color: #666;
+  margin: 0;
+}
+
+/* Client Testimonials Section */
+.testimonials {
+  padding: 80px 0;
+  background: linear-gradient(135deg, #0d344e 0%, #6698b9 100%);
+  color: white;
+}
+
+.testimonials h2 {
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 20px;
+  color: white;
+}
+
+.testimonials-intro {
+  text-align: center;
+  font-size: 1.2rem;
+  margin-bottom: 60px;
+  opacity: 0.9;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.testimonials-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 30px;
+  margin-bottom: 60px;
+}
+
+.testimonial-card {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border-radius: 15px;
+  padding: 30px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  transition: transform 0.3s ease;
+}
+
+.testimonial-card:hover {
+  transform: translateY(-5px);
+}
+
+.stars {
+  margin-bottom: 20px;
+}
+
+.star {
+  font-size: 1rem;
+  color: rgba(255, 255, 255, 0.3);
+  margin-right: 5px;
+}
+
+.star.filled {
+  color: rgb(236, 161, 22);
+}
+
+.testimonial-text {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  margin-bottom: 25px;
+  font-style: italic;
+}
+
+.testimonial-author h4 {
+  margin-bottom: 5px;
+  font-size: 1.2rem;
+}
+
+.testimonial-author p {
+  opacity: 0.8;
+  margin: 0;
+}
+
+.testimonial-cta {
+  text-align: center;
+  margin-top: 60px;
+}
+
+.testimonial-cta h3 {
+  font-size: 1.5rem;
+  margin-bottom: 15px;
+}
+
+.testimonial-cta p {
+  font-size: 1.1rem;
+  margin-bottom: 30px;
+  opacity: 0.9;
+}
+
+.cta-button {
+  background: #ff6600;
+  color: white;
+  padding: 15px 40px;
+  border: none;
+  border-radius: 50px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.cta-button:hover {
+  background: #f8f9fa;
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+  color: #ff6600;;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .story-content {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .story-text h1 {
+    font-size: 2rem;
+  }
+
+  .stats-grid {
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+  }
+
+  .testimonials-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .cert-list {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .container {
+    padding: 0 15px;
+  }
+
+  .company-story,
+  .credentials,
+  .testimonials {
+    padding: 60px 0;
+  }
+}
+
+@media (max-width: 480px) {
+  .story-text h1 {
+    font-size: 2rem;
+  }
+
+  .testimonials h2,
+  .credentials h2 {
+    font-size: 2rem;
+  }
+
+  .stat-card {
+    padding: 30px 15px;
+  }
+
+  .testimonial-card {
+    padding: 25px;
+  }
+}
+.about-page {
+  font-family: "Arial", sans-serif;
+  line-height: 1.6;
+  color: #333;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* Company Story & Mission Section */
+.company-story {
+  padding: 80px 0;
+  background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+}
+
+.story-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: center;
+}
+
+.story-text h1 {
+  font-size: 2rem;
+  color: #2c3e50;
+  margin-bottom: 10px;
+  font-weight: 700;
+}
+
+.story-text h2 {
+  font-size: 1.5rem;
+  color: #3498db;
+  margin-bottom: 30px;
+  font-weight: 400;
+}
+
+.mission-statement {
+  font-size: 1.2rem;
+  color: #555;
+  margin-bottom: 25px;
+  font-weight: 500;
+  line-height: 1.7;
+}
+
+.story-text p {
+  margin-bottom: 20px;
+  color: #666;
+  font-size: 1.1rem;
+}
+
+.values {
+  margin-top: 40px;
+}
+
+.values h3 {
+  color: #2c3e50;
+  margin-bottom: 20px;
+  font-size: 1.4rem;
+}
+
+.values ul {
+  list-style: none;
+  padding: 0;
+}
+
+.values li {
+  margin-bottom: 15px;
+  padding-left: 20px;
+  position: relative;
+  color: #555;
+}
+
+.values li::before {
+  content: "✓";
+  position: absolute;
+  left: 0;
+  color: #27ae60;
+  font-weight: bold;
+  font-size: 1.2rem;
+}
+
+.story-image img {
+  width: 100%;
+  height: 400px;
+  object-fit: cover;
+  border-radius: 15px;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+}

@@ -1,0 +1,602 @@
+.contact-container {
+  font-family: 'Segoe UI', sans-serif;
+  color:black;
+}
+
+.hero3 {
+  background-image: url('/images/img16.png');
+  background-size: cover;
+  width: 95%;
+  background-position: center;
+  height: 90vh;
+  position: relative;
+  margin-top: 77px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.hero3-overlay {
+  background-color: rgba(0, 0, 0, 0.5);
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  text-align: center;
+  padding: 0 20px;
+}
+
+.hero3 h1 {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+  margin-left: 500px;
+  max-width: 600px;
+}
+.hero3 h2 {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+ 
+  
+}
+
+.hero3 p {
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+  margin-left: 500px;;
+}
+.contact-agent-form {
+  background-color: #dfdfee;
+  padding: 3rem 2rem;
+  border-radius: 12px;
+  max-width: 600px;
+  margin: 3rem auto;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+  font-family: 'Segoe UI', sans-serif;
+  text-align: center;
+}
+
+.contact-agent-form h2 {
+  color: #0b0338;
+  margin-bottom: 0.5rem;
+}
+
+.contact-agent-form p {
+  color: #555;
+  margin-bottom: 2rem;
+  font-size: 1rem;
+}
+
+.contact-agent-form form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+  align-items: center; 
+}
+
+.contact-agent-form input,
+.contact-agent-form textarea {
+  padding: 0.75rem 1rem;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 1rem;
+  max-width: 400px; 
+  width: 90%; 
+  font-family: inherit;
+}
+
+.contact-agent-form textarea {
+  resize: vertical;
+}
+
+.contact-agent-form button {
+  background-color: #ff6600;
+  color: white;
+  border: none;
+  padding: 0.8rem 1.2rem;
+  border-radius: 8px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.3s;
+  /* Add width to button as well, to align with inputs */
+  width: 90%; /* Adjust as needed */
+  max-width: 400px; /* Adjust as needed, should match inputs/textarea */
+}
+.agent-btn {
+  display: inline-block;
+  margin-top: 1rem;
+  padding: 0.6rem 1.2rem;
+  background-color: #020933;
+  color: white;
+  border-radius: 6px;
+  font-weight: 500;
+  font-size: 0.95rem;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+}
+
+.agent-btn:hover {
+  background-color: #535355;
+}
+/* src/components/FAQSection.css */
+
+.faq-section {
+  padding: 4rem 2rem; /* More padding top/bottom */
+  background-color: #f8f8f8; /* A very light background to distinguish it */
+  max-width: 900px; /* Limit width for readability */
+  margin: 0 auto; /* Center the section on the page */
+  font-family: 'Arial', sans-serif; /* Use a readable font */
+  color: #333;
+}
+
+.faq-header {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.faq-subheading {
+  font-size: 1rem;
+  color: #777;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 0.5rem;
+  font-weight: bold;
+}
+
+.faq-main-heading {
+  font-size:    1.5rem;
+  color: #0b0338; /* Your dark blue from the header */
+  line-height: 1.2;
+  margin-bottom: 0;
+}
+
+.faq-container {
+  border-top: 1px solid #eee; /* Top border for the first item */
+}
+
+.faq-item {
+  border-bottom: 1px solid #eee; /* Separator between items */
+  background-color: #fff;
+  margin-bottom: 0.5rem; /* Small gap between items */
+  box-shadow: 0 2px 5px rgba(0,0,0,0.03); /* Subtle shadow for depth */
+  border-radius: 8px; /* Slightly rounded corners for each item */
+  overflow: hidden; /* Important for hiding the answer with max-height */
+}
+
+.faq-question {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.2rem 1.5rem;
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #0b0338; /* Dark blue for questions */
+  transition: background-color 0.3s ease;
+}
+
+.faq-question:hover {
+  background-color: #f0f0f0; /* Light hover effect */
+}
+
+.faq-icon {
+  display: flex; /* To center the SVG icon */
+  align-items: center;
+  justify-content: center;
+}
+
+.faq-icon .chevron {
+  transition: transform 0.3s ease;
+  color: #0b0338; /* Icon color */
+}
+
+.faq-item.open .faq-icon .chevron {
+  transform: rotate(180deg); /* Rotate icon when open */
+}
+
+.faq-answer {
+  max-height: 0; /* Hidden by default */
+  overflow: hidden; /* Hide overflow content */
+  transition: max-height 0.4s ease-out, padding 0.4s ease-out; /* Smooth transition */
+  padding: 0 1.5rem; /* No vertical padding when closed */
+  box-sizing: border-box; /* Include padding in element's total width/height */
+}
+
+.faq-item.open .faq-answer {
+  max-height: 200px; /* Max height when open. Adjust as needed based on your longest answer. */
+  padding: 1rem 1.5rem 1.5rem; /* Padding when open (top, horizontal, bottom) */
+}
+
+.faq-answer p {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #555;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .faq-main-heading {
+    font-size: 2rem;
+  }
+  .faq-question {
+    font-size: 1rem;
+    padding: 1rem 1.2rem;
+  }
+  .faq-answer {
+    padding: 0.8rem 1.2rem 1.2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .faq-section {
+    padding: 3rem 1rem;
+  }
+  .faq-main-heading {
+    font-size: 1.8rem;
+  }
+}
+/* How It Works Section */
+.how-it-works {
+  padding: 80px 0;
+  background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+  position: relative;
+  overflow: hidden;
+}
+
+.how-it-works::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.03'%3E%3Ccircle cx='30' cy='30' r='2'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+  pointer-events: none;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+  position: relative;
+  z-index: 1;
+}
+
+/* Section Header */
+.section-header {
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.section-header h2 {
+  font-size: 3rem;
+  color: #2c3e50;
+  margin-bottom: 15px;
+  font-weight: 700;
+  position: relative;
+}
+
+.section-header h2::after {
+  content: "";
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 4px;
+  background: linear-gradient(90deg, #3498db, #e74c3c, #f39c12, #27ae60);
+  border-radius: 2px;
+}
+
+.section-header p {
+  font-size: 1.2rem;
+  color: #666;
+  max-width: 600px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+/* Steps Container */
+.steps-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 40px;
+  margin-bottom: 60px;
+  position: relative;
+}
+
+/* Step Card */
+.step-card {
+  background: white;
+  border-radius: 20px;
+  padding: 40px 30px;
+  text-align: center;
+  position: relative;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  border: 3px solid transparent;
+  overflow: hidden;
+}
+
+.step-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 5px;
+  background: var(--step-color);
+}
+
+.step-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+  border-color: var(--step-color);
+}
+
+/* Step Number */
+.step-number {
+  position: absolute;
+  top: -15px;
+  right: 20px;
+  width: 50px;
+  height: 50px;
+  background: var(--step-color);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.step-number span {
+  color: white;
+  font-weight: 700;
+  font-size: 1.2rem;
+}
+
+/* Step Icon */
+.step-icon {
+  margin-bottom: 25px;
+}
+
+.step-icon span {
+  font-size: 4rem;
+  display: inline-block;
+  animation: float 3s ease-in-out infinite;
+}
+
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+/* Step Content */
+.step-content h3 {
+  font-size: 1.5rem;
+  color: #2c3e50;
+  margin-bottom: 15px;
+  font-weight: 600;
+}
+
+.step-content p {
+  color: #666;
+  line-height: 1.6;
+  font-size: 1rem;
+}
+
+/* Step Connector (for larger screens) */
+.step-connector {
+  display: none;
+}
+
+/* CTA Section */
+.cta-section {
+  text-align: center;
+  background: white;
+  padding: 50px 40px;
+  border-radius: 20px;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+  margin-bottom: 50px;
+}
+
+.cta-section h3 {
+  font-size: 2rem;
+  color: #2c3e50;
+  margin-bottom: 15px;
+  font-weight: 600;
+}
+
+.cta-section p {
+  font-size: 1.1rem;
+  color: #666;
+  margin-bottom: 30px;
+  max-width: 500px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.get-started-btn {
+  background: linear-gradient(135deg, #3498db, #2980b9);
+  color: white;
+  border: none;
+  padding: 18px 40px;
+  border-radius: 50px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.get-started-btn::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  transition: left 0.5s;
+}
+
+.get-started-btn:hover::before {
+  left: 100%;
+}
+
+.get-started-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 15px 30px rgba(52, 152, 219, 0.4);
+}
+
+/* Process Benefits */
+.process-benefits {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 30px;
+}
+
+.benefit {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+  background: white;
+  padding: 25px 20px;
+  border-radius: 15px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+  transition: all 0.3s ease;
+}
+
+.benefit:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.12);
+}
+
+.benefit-icon {
+  font-size: 2rem;
+}
+
+.benefit span:last-child {
+  font-weight: 600;
+  color: #2c3e50;
+  font-size: 1rem;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .how-it-works {
+    padding: 60px 0;
+  }
+
+  .section-header h2 {
+    font-size: 2.5rem;
+  }
+
+  .section-header {
+    margin-bottom: 40px;
+  }
+
+  .steps-container {
+    grid-template-columns: 1fr;
+    gap: 30px;
+    margin-bottom: 40px;
+  }
+
+  .step-card {
+    padding: 35px 25px;
+  }
+
+  .step-icon span {
+    font-size: 3rem;
+  }
+
+  .cta-section {
+    padding: 40px 25px;
+    margin-bottom: 40px;
+  }
+
+  .cta-section h3 {
+    font-size: 1.8rem;
+  }
+
+  .process-benefits {
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 20px;
+  }
+
+  .benefit {
+    padding: 20px 15px;
+    flex-direction: column;
+    text-align: center;
+    gap: 10px;
+  }
+}
+
+@media (max-width: 480px) {
+  .section-header h2 {
+    font-size: 2rem;
+  }
+
+  .step-card {
+    padding: 30px 20px;
+  }
+
+  .step-content h3 {
+    font-size: 1.3rem;
+  }
+
+  .cta-section {
+    padding: 30px 20px;
+  }
+
+  .get-started-btn {
+    padding: 15px 30px;
+    font-size: 1rem;
+  }
+}
+
+/* Large screens - show connectors */
+@media (min-width: 1200px) {
+  .steps-container {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+  }
+
+  .step-connector {
+    display: block;
+    position: absolute;
+    top: 50%;
+    right: -30px;
+    transform: translateY(-50%);
+    z-index: 2;
+  }
+
+  .connector-arrow {
+    font-size: 2rem;
+    color: #3498db;
+    animation: pulse 2s infinite;
+  }
+
+  @keyframes pulse {
+    0%,
+    100% {
+      opacity: 0.6;
+      transform: translateY(-50%) scale(1);
+    }
+    50% {
+      opacity: 1;
+      transform: translateY(-50%) scale(1.1);
+    }
+  }
+
+  .step-card:last-child .step-connector {
+    display: none;
+  }
+}

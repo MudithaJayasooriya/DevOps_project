@@ -3,14 +3,13 @@
   top: 0; 
   left: 0;
   width: 100%;
-  height: 40px;
+  height: 70px;
   background-color: #0b0338; 
   padding: 20px 20px; 
   display: flex;
   justify-content: space-between; 
   align-items: center;
   z-index: 1000; 
-  
  
 }
 .navbar-logo h3 {
@@ -49,49 +48,75 @@ font-family:serif;
 {
     font-size: 40px;
     font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-   
+    color:#f7fa36;
    
 }
-/* Buttons in Navbar */
+
 .navbar button {
     font-size: 16px;
     border: 1px solid transparent;
+    padding: 5px 20px;
     border-radius: 50px;
     cursor: pointer;
     transition: 0.3s;
     width: 100px;
-    height: 35px;
-    margin-right:10px ;
+    height: 30px; 
+    
+    
 }
 
-/* Login button - orange background */
+
 .login-button {
-    background-color: #f5740b; /* orange */
-    color: #ffffff;            /* white text */
-    border: 1px solid #f5740b;
-  
-  }
+    background-color: #f5740b; 
+    color: #0b0338;
+    border: 1px solid cxc; 
+    margin-right: 10px;   
+
+}
 
 .login-button:hover {
-    background-color: #ffffff; /* hover white */
-    color: #0b0338;            /* text orange */
+    background-color:  #ffffff; 
+    border-color: #0e0707;
+    color: #0b0338;
 }
 
-/* Signup button - gray background */
+.logout-button {
+    background-color: #f5740b; 
+    color: #0b0338;
+    border: 1px solid cxc; 
+    margin-right: 50px;   
+
+}
+
+
 .signup-button {
-    background-color: #e0e0e0; /* gray */
-    color: #0b0338;            /* dark text */
-    border: 1px solid #b0b0b0;
+    background-color: white;
+    color:#0b0338;
+    border: 1px solid white; 
+    margin-right: 40px;
+    
 }
 
 .signup-button:hover {
-    background-color: #f5740b;            /* text orange */
-    color: white;
-     border: 1px solid #0b0338;
+    background-color:#f5740b;
+    border-color: #070707;
+    color:#0b0338;
 }
 
-/* Optional: spacing in Navbar */
-.navbar-right {
-    display: flex;
-    gap: 15px;
+.navbar-links li.active {
+    text-decoration: underline;
+    font-weight: bold;  
+    text-underline-offset: 4px;
+    text-decoration-thickness: 2px;  
+    text-decoration-color: white;
+    
+}
+.navbar-links li {
+    padding: 10px;
+    cursor: pointer;
+    transition: text-decoration 0.3s ease;
+    padding-bottom: 2px;
+    color:white;
+   
+    
 }

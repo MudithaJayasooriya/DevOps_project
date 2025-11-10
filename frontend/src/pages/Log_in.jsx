@@ -1,43 +1,48 @@
-import { useState } from "react";
+import { useState, useContext } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
+import { AuthContext } from "../context/AuthContext";
 import "./Auth.css";
 
-// ✅ Read backend URL from environment
-const API_URL = import.meta.env.VITE_API_URL || "http://localhost:3001";
-
-function Login() {
+function Log_in() {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [loading, setLoading] = useState(false);
+  const [notification, setNotification] = useState(null); // { message, type: 'success' | 'error' }
   const navigate = useNavigate();
+  const { login } = useContext(AuthContext);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    if (!username || !password) return alert("Please fill all fields");
+
+    if (!username || !password) {
+      setNotification({ message: "Please fill all fields.", type: "error" });
+      return;
+    }
 
     setLoading(true);
     try {
-      const res = await axios.post(
-        `${API_URL}/login`,
-        { username: username.trim(), password: password.trim() },
-        { withCredentials: true } // ✅ ensures cookies are sent if you use sessions
-      );
+      const result = await axios.post("http://localhost:3001/users/login", { username, password });
 
-      if (res.data?.status === "success") {
-        const userObj = res.data.user;
+      if (result.data && result.data.status === "success") {
+        const userObj = result.data.user;
+        const token = result.data.token;
+        login(userObj, token);
 
-        // Save user info in localStorage
-        localStorage.setItem("user", JSON.stringify(userObj));
+        setNotification({ message: "Login successful! Redirecting...", type: "success" });
 
-        // Redirect to home page
-        navigate("/", { replace: true });
+        setTimeout(() => {
+          if (userObj.role === "admin") {
+            navigate("/admin/dashboard", { replace: true });
+          } else {
+            navigate("/add_your_home", { replace: true });
+          }
+        }, 1500);
       } else {
-        alert(res.data?.message || "Invalid credentials");
+        setNotification({ message: result.data?.message || "Invalid credentials", type: "error" });
       }
     } catch (err) {
-      console.error(err);
-      alert(`Login failed: ${err.response?.data?.message || err.message}`);
+      setNotification({ message: `Login failed: ${err.response?.data?.message || err.message}`, type: "error" });
     } finally {
       setLoading(false);
     }
@@ -47,6 +52,16 @@ function Login() {
     <div className="auth-container login-container">
       <div className="auth-card">
         <h2>LOG IN</h2>
+
+        {notification && (
+          <div
+            className={`notification ${notification.type === "success" ? "success" : "error"}`}
+            role="alert"
+          >
+            {notification.message}
+          </div>
+        )}
+
         <form onSubmit={handleSubmit}>
           <div className="input-group">
             <label>Username</label>
@@ -80,4 +95,4 @@ function Login() {
   );
 }
 
-export default Login;
+export default Log_in;

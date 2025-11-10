@@ -11,7 +11,7 @@
   
 }
 .signup-container {
-  background-image: url('/images/img1.jpeg'); 
+  background-image: url('/images/bg2.jpg'); 
  background-size: cover;
   background-position: center;
   background-repeat: no-repeat; 
@@ -26,7 +26,7 @@
  ;
 }
 .login-container {
-  background-image: url('/images/img2.jpeg'); 
+  background-image: url('/images/bg3.jpg'); 
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat; 
@@ -119,4 +119,25 @@
   font-size: 1rem;
   border: 1px solid #ccc;
   border-radius: 5px;
+}
+.notification {
+  margin-bottom: 1rem;
+  padding: 0.75rem 1rem;
+  border-radius: 4px;
+  font-weight: 600;
+  text-align: center;
+  margin-right: 250px;
+  margin-top: 40px;
+}
+
+.notification.success {
+  background-color: #d4edda;
+  color: #155724;
+  border: 1px solid #c3e6cb;
+}
+
+.notification.error {
+  background-color: #f8d7da;
+  color: #721c24;
+  border: 1px solid #f5c6cb;
 }
