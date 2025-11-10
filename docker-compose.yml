@@ -2,12 +2,9 @@ version: "3.9"
 
 services:
   frontend:
-    build: ./frontend
+    image: muditha2002/devops_frontend_image:v2.0.0  # Use image from Docker Hub
     ports:
       - "5173:5173"
-    volumes:
-      - ./frontend:/app
-      - /app/node_modules
     environment:
       - CHOKIDAR_USEPOLLING=true
       - VITE_API_URL=http://localhost:3001
@@ -17,12 +14,9 @@ services:
       - app-network
 
   backend:
-    build: ./backend
+    image: muditha2002/devops_backend_image:v2.0.0  # Use image from Docker Hub
     ports:
       - "3001:3001"
-    volumes:
-      - ./backend:/app
-      - /app/node_modules
     env_file:
       - ./backend/.env
     depends_on:
