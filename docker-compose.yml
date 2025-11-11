@@ -2,7 +2,7 @@ version: "3.9"
 
 services:
   frontend:
-    image: muditha2002/devops_frontend_image:v2.0.0  # Use image from Docker Hub
+    image: muditha2002/devops_frontend_image:v2.0.2  # Use image from Docker Hub
     ports:
       - "5173:5173"
     environment:
