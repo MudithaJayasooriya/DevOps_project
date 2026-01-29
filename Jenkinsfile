@@ -16,9 +16,9 @@ pipeline {
       }
     }
 
-    stage('Build Images (docker-compose)') {
+    stage('Build Images') {
       steps {
-        sh 'docker-compose build'
+        sh 'docker compose build'
       }
     }
 
@@ -33,7 +33,11 @@ pipeline {
 
     stage('Push to Docker Hub') {
       steps {
-        withCredentials([usernamePassword(credentialsId: 'docker-hub-credentials', usernameVariable: 'USERNAME', passwordVariable: 'PASSWORD')]) {
+        withCredentials([usernamePassword(
+          credentialsId: 'docker-hub-credentials',
+          usernameVariable: 'USERNAME',
+          passwordVariable: 'PASSWORD'
+        )]) {
           sh """
             echo "\$PASSWORD" | docker login -u "\$USERNAME" --password-stdin
             docker push ${FRONTEND_REPO}:${IMAGE_TAG}
@@ -47,9 +51,9 @@ pipeline {
     stage('Deploy on EC2') {
       steps {
         sh '''
-          docker-compose down || true
-          docker-compose pull || true
-          docker-compose up -d
+          docker compose down || true
+          docker compose pull || true
+          docker compose up -d
           docker ps
         '''
       }
