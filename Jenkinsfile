@@ -48,14 +48,21 @@ pipeline {
       }
     }
 
-    stage('Deploy on EC2') {
+   stage('Deploy on EC2') {
       steps {
-        sh '''
-          docker compose down || true
-          docker compose pull || true
-          docker compose up -d
-          docker ps
-        '''
+        // This retrieves the secret text and puts it into a variable called ENV_DATA
+        withCredentials([string(credentialsId: 'backend-env-content', variable: 'ENV_DATA')]) {
+          sh '''
+            # Recreate the missing .env file from the Jenkins credential
+            echo "$ENV_DATA" > backend/.env
+            
+            # Now run the deployment commands
+            docker compose down || true
+            docker compose pull || true
+            docker compose up -d
+            docker ps
+          '''
+        }
       }
     }
   }
