@@ -1,28 +1,72 @@
-# Dependencies
+# ======================
+# Node / Frontend / Backend
+# ======================
 node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
 .env
 .env.local
+.env.production
+.env.development
 
-# Build and distribution folders
+# ======================
+# Build folders
+# ======================
 dist/
 build/
 out/
 .tmp/
 
+# ======================
 # IDE files
+# ======================
 .vscode/
 .idea/
 *.log
 
+# ======================
 # OS files
+# ======================
 .DS_Store
 Thumbs.db
 
-# Docker / Gradle / Misc
+# ======================
+# Docker
+# ======================
+**/.dockerignore
+docker-compose.override.yml
+
+# ======================
+# Terraform (VERY IMPORTANT)
+# ======================
+terraform_test/
+**/.terraform/
+*.tfstate
+*.tfstate.backup
+*.tfvars
+
+# ======================
+# AWS / Security
+# ======================
+*.pem
+*.ppk
+*.key
+
+# ======================
+# Java / Gradle
+# ======================
 .gradle/
 target/
-__pycache__/
-*.pid
 
-# Ignore local configs
+# ======================
+# Python
+# ======================
+__pycache__/
+
+# ======================
+# Misc
+# ======================
+*.pid
 local.properties
