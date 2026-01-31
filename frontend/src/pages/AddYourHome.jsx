@@ -38,7 +38,7 @@ const AddYourHome = () => {
   useEffect(() => {
     const fetchProperties = async () => {
       try {
-        const res = await axios.get("http://localhost:3001/");
+        const res = await axios.get("http://3.110.81.190:3001/");
         const userProperties = res.data.filter((p) => p.ownerType !== "admin");
         setProperties(userProperties);
       } catch (err) {
@@ -141,8 +141,8 @@ const AddYourHome = () => {
       if (editingProperty) {
         const endpoint =
   editingProperty.ownerType === "admin"
-    ? `http://localhost:3001/admin/properties/${editingProperty._id}`
-    : `http://localhost:3001/user/${editingProperty._id}`;
+    ? `http://3.110.81.190:3001/admin/properties/${editingProperty._id}`
+    : `http://3.110.81.190:3001/user/${editingProperty._id}`;
 
         const headers =
           editingProperty.ownerType === "admin" ? { "x-role": "admin" } : {};
@@ -156,8 +156,8 @@ const AddYourHome = () => {
       } else {
         const endpoint =
   user?.role === "admin"
-    ? "http://localhost:3001/admin/properties"
-    : "http://localhost:3001/user";
+    ? "http://3.110.81.190:3001/admin/properties"
+    : "http://3.110.81.190:3001/user";
 
         const headers = user?.role === "admin" ? { "x-role": "admin" } : {};
 
@@ -191,8 +191,8 @@ const handleDelete = async () => {
   try {
     const endpoint =
   propertyToDelete.ownerType === "admin"
-    ? `http://localhost:3001/admin/properties/${propertyToDelete._id}`
-    : `http://localhost:3001/user/${propertyToDelete._id}`;
+    ? `http://3.110.81.190:3001/admin/properties/${propertyToDelete._id}`
+    : `http://3.110.81.190:3001/user/${propertyToDelete._id}`;
 
     const headers =
       propertyToDelete.ownerType === "admin" ? { "x-role": "admin" } : {};

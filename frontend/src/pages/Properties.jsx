@@ -21,7 +21,7 @@ const Properties = () => {
   useEffect(() => {
     const fetchProperties = async () => {
       try {
-        const res = await axios.get("http://localhost:3001/")
+        const res = await axios.get("http://3.110.81.190:3001/")
         const grouped = {}
         res.data.forEach((prop) => {
           const type = prop.propertyType || "Other"

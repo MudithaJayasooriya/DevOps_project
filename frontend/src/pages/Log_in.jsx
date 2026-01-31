@@ -22,7 +22,7 @@ function Log_in() {
 
     setLoading(true);
     try {
-      const result = await axios.post("http://localhost:3001/users/login", { username, password });
+      const result = await axios.post("http://3.110.81.190:3001/users/login", { username, password });
 
       if (result.data && result.data.status === "success") {
         const userObj = result.data.user;

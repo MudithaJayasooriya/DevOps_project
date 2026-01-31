@@ -10,7 +10,7 @@ const app = express();
 
 app.use(express.json());
 app.use(cors({
-  origin: "http://localhost:5173",
+  origin: "http://3.110.81.190:5173",
   credentials: true,
 }));
 
@@ -25,4 +25,4 @@ app.use("/", propertyRoutes);
 
 
 const PORT = process.env.PORT || 3001;
-app.listen(PORT, () => console.log(`✅ Server running on http://localhost:${PORT}`));
+app.listen(PORT, () => console.log(`✅ Server running on http://3.110.81.190:${PORT}`));

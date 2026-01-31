@@ -34,7 +34,7 @@ function AdminDashboard() {
 
   const fetchProperties = async () => {
     try {
-      const res = await axios.get("http://localhost:3001/admin/properties", roleHeader)
+      const res = await axios.get("http://3.110.81.190:3001/admin/properties", roleHeader)
       setProperties(res.data)
     } catch (err) {
       setError("Failed to fetch properties")
@@ -55,7 +55,7 @@ function AdminDashboard() {
       console.log("Attempting to delete property with ID:", id);
       
       const response = await axios.delete(
-        `http://localhost:3001/admin/properties/${id}`, 
+        `http://3.110.81.190:3001/admin/properties/${id}`, 
         roleHeader
       );
       
@@ -170,14 +170,14 @@ function AdminDashboard() {
       let res;
       if (editingId) {
         res = await axios.put(
-          `http://localhost:3001/admin/properties/${editingId}`,
+          `http://3.110.81.190:3001/admin/properties/${editingId}`,
           propertyData,
           roleHeader
         );
         setProperties(properties.map((p) => (p._id === editingId ? res.data : p)));
       } else {
         res = await axios.post(
-          "http://localhost:3001/admin/properties",
+          "http://3.110.81.190:3001/admin/properties",
           propertyData,
           roleHeader
         );

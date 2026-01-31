@@ -21,7 +21,7 @@ const Sign_up = () => {
     }
 
     try {
-      const result = await axios.post("http://localhost:3001/users/signup", { username, email, password });
+      const result = await axios.post("http://3.110.81.190:3001/users/signup", { username, email, password });
 
       if (result.data.status === "success") {
         setNotification({ message: "User registered successfully!", type: "success" });
