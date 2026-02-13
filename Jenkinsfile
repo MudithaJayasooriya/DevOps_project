@@ -16,11 +16,12 @@ pipeline {
       }
     }
 
-    stage('Build Images') {
-      steps {
-    sh 'docker compose build'
-      }
-    }
+  stage('Build Images') {
+  steps {
+    sh 'DOCKER_BUILDKIT=1 docker compose build'
+  }
+}
+
 
     stage('Tag Images') {
       steps {
