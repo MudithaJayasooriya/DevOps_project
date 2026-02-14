@@ -3,6 +3,9 @@
 # Use official Node.js 20 Alpine image
 FROM node:20-alpine
 
+# Install build dependencies for bcrypt
+RUN apk add --no-cache python3 make g++
+
 # Set working directory
 WORKDIR /app
 

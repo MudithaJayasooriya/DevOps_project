@@ -33,8 +33,15 @@ export const signup = async (req, res) => {
       });
     }
 
-    console.log("   Hashing password...");
-    const hashedPassword = await bcrypt.hash(password.trim(), 10);
+    console.log("   Hashing password with bcrypt...");
+    let hashedPassword;
+    try {
+      hashedPassword = await bcrypt.hash(password.trim(), 10);
+      console.log("   ✅ Password hashed successfully");
+    } catch (hashErr) {
+      console.error("   ❌ Bcrypt error:", hashErr);
+      throw new Error("Password hashing failed: " + hashErr.message);
+    }
     
     console.log("   Creating user document...");
     const newUser = new User({
@@ -53,6 +60,7 @@ export const signup = async (req, res) => {
     console.error("   Message:", err.message);
     console.error("   Stack:", err.stack);
     console.error("   Code:", err.code);
+    console.error("   Name:", err.name);
     
     // Handle duplicate key errors
     if (err.code === 11000) {
