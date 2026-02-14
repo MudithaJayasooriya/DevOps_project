@@ -1,6 +1,6 @@
 
 import { useState, useEffect } from "react"
-import "./Properties.css"
+import "@/pages/Properties.css";
 import { Link } from "react-router-dom"
 import axios from "axios"
 
