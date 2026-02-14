@@ -4,7 +4,7 @@
 FROM node:20-alpine
 
 # Set working directory
-WORKDIR /app
+WORKDIR /app/frontend
 
 # Copy package.json and package-lock.json first (caching optimization)
 COPY package*.json ./
@@ -23,3 +23,4 @@ ENV VITE_API_URL=http://backend:3001
 
 # Start Vite dev server, accessible to host network
 CMD ["npm", "run", "dev", "--", "--host", "0.0.0.0"]
+
