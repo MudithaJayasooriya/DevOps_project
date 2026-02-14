@@ -26,10 +26,22 @@ mongoose.connect(process.env.MONGODB_URI)
 app.use((req, res, next) => {
   if (mongoose.connection.readyState !== 1) {
     console.warn("⚠️ MongoDB not connected. Connection state:", mongoose.connection.readyState);
+    return res.status(503).json({ 
+      status: "error", 
+      message: "Database not connected. Please try again later." 
+    });
   }
   next();
 });
 
+// Health check endpoint
+app.get("/health", (req, res) => {
+  res.json({
+    status: "ok",
+    mongodb: mongoose.connection.readyState === 1 ? "connected" : "disconnected",
+    timestamp: new Date().toISOString()
+  });
+});
 
 app.use("/users", userRoutes);
 app.use("/", propertyRoutes);
