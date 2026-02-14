@@ -1,15 +1,30 @@
 import express from "express";
 import { signup, login } from "../controllers/userController.js";
-import bcrypt from "bcrypt";
+import User from "../models/User.js";
 
 const router = express.Router();
 
-// Test endpoint to verify bcrypt is working
-router.get("/test", async (req, res) => {
+// Simple test endpoint
+router.get("/test", (req, res) => {
+  res.json({ status: "ok", message: "User routes working" });
+});
+
+// Test signup without bcrypt
+router.post("/test-signup", async (req, res) => {
   try {
-    const hash = await bcrypt.hash("test123", 10);
-    res.json({ status: "ok", message: "bcrypt working", hash });
+    console.log("Test signup:", req.body);
+    const { username, email, password } = req.body;
+    
+    const newUser = new User({
+      username,
+      email,
+      password: "test123" // plaintext for testing
+    });
+    
+    await newUser.save();
+    res.json({ status: "success", message: "Test user created" });
   } catch (err) {
+    console.error("Test signup error:", err);
     res.status(500).json({ status: "error", message: err.message });
   }
 });

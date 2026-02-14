@@ -7,7 +7,7 @@ const Home = () => {
     <div className="home-container">
       <section className="hero">
         <div className="hero-overlay">
-          <h1>Find  Dream Property</h1>
+          <h1>Muditha</h1>
           <p>Trusted Real Estate Solutions.</p>
           <Link to="/Properties" className="hero-btn">
             Browse Listings

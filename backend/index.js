@@ -14,9 +14,17 @@ app.use(cors({
   credentials: true,
 }));
 
+// Request logging middleware
+app.use((req, res, next) => {
+  console.log(`📨 ${req.method} ${req.path}`);
+  next();
+});
+
 // MongoDB connection with better error handling
 mongoose.connect(process.env.MONGODB_URI)
-  .then(() => console.log("✅ MongoDB connected to:", process.env.MONGODB_URI.replace(/\/\/.*@/, "//***@")))
+  .then(() => {
+    console.log("✅ MongoDB connected to:", process.env.MONGODB_URI.split('@')[1] || process.env.MONGODB_URI);
+  })
   .catch(err => {
     console.error("❌ MongoDB connection error:", err.message);
     console.error("   Check if MongoDB is running and MONGODB_URI is correct");
@@ -34,7 +42,7 @@ app.use((req, res, next) => {
   next();
 });
 
-// Health check endpoint
+// Health check endpoint - MUST come before other routes
 app.get("/health", (req, res) => {
   res.json({
     status: "ok",
@@ -43,6 +51,7 @@ app.get("/health", (req, res) => {
   });
 });
 
+// Route handlers
 app.use("/users", userRoutes);
 app.use("/", propertyRoutes);
 
@@ -57,4 +66,16 @@ app.use((err, req, res, next) => {
 });
 
 const PORT = process.env.PORT || 3001;
-app.listen(PORT, () => console.log(`✅ Server running on http://3.110.81.190:${PORT}`));
+app.listen(PORT, async () => {
+  console.log(`✅ Server running on http://3.110.81.190:${PORT}`);
+  
+  // Test bcrypt on startup
+  try {
+    const bcrypt = await import('bcrypt');
+    const testHash = await bcrypt.hash('test', 10);
+    console.log('✅ Bcrypt module loaded successfully');
+  } catch (err) {
+    console.error('❌ Bcrypt failed to load:', err.message);
+    console.error('   Run: npm install bcrypt --save');
+  }
+});
