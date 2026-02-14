@@ -2,14 +2,9 @@ import Property from "../models/Property.js";
 
 export const getAllProperties = async (req, res) => {
   try {
-    console.log("📝 Fetching all properties...");
     const properties = await Property.find();
-    console.log(`✅ Found ${properties.length} properties`);
     res.status(200).json(properties);
   } catch (error) {
-    console.error("❌ Error in getAllProperties:");
-    console.error("   Message:", error.message);
-    console.error("   Stack:", error.stack);
     res.status(500).json({ message: error.message });
   }
 };

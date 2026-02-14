@@ -15,9 +15,8 @@ const propertySchema = new mongoose.Schema({
   bedrooms: { type: Number },
   bathrooms: { type: Number },
   sqft: { type: Number },
-  squareFootage: { type: Number },
   images: { type: [String] },
-  image: { type: String },
+  
 });
 
 const Property = mongoose.model("Property", propertySchema);
