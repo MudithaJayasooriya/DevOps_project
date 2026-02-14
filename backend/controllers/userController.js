@@ -6,7 +6,7 @@ dotenv.config(); // ✅ Load .env variables
 
 // ------------------- SIGNUP -------------------
 export const signup = async (req, res) => {
-  console.log("Request body:", req.body);
+  console.log("📝 Signup request body:", req.body);
   const { username, email, password } = req.body;
 
   if (!username || !email || !password) {
@@ -14,6 +14,20 @@ export const signup = async (req, res) => {
   }
 
   try {
+    // Check if user already exists
+    const existingUser = await User.findOne({ 
+      $or: [{ username: username.trim() }, { email: email.trim() }] 
+    });
+    
+    if (existingUser) {
+      return res.status(400).json({ 
+        status: "error", 
+        message: existingUser.username === username.trim() 
+          ? "Username already exists" 
+          : "Email already exists" 
+      });
+    }
+
     const hashedPassword = await bcrypt.hash(password.trim(), 10);
     const newUser = new User({
       username: username.trim(),
@@ -22,10 +36,26 @@ export const signup = async (req, res) => {
     });
 
     await newUser.save();
+    console.log("✅ User created successfully:", username);
 
     res.json({ status: "success", message: "User created" });
   } catch (err) {
-    res.status(500).json({ status: "error", message: "Signup failed", error: err.message });
+    console.error("❌ Signup error:", err);
+    
+    // Handle duplicate key errors
+    if (err.code === 11000) {
+      const field = Object.keys(err.keyPattern)[0];
+      return res.status(400).json({ 
+        status: "error", 
+        message: `${field.charAt(0).toUpperCase() + field.slice(1)} already exists` 
+      });
+    }
+    
+    res.status(500).json({ 
+      status: "error", 
+      message: "Signup failed", 
+      error: err.message 
+    });
   }
 };
 
