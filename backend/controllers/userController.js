@@ -7,14 +7,24 @@ dotenv.config(); // ✅ Load .env variables
 // ------------------- SIGNUP -------------------
 export const signup = async (req, res) => {
   console.log("Request body:", req.body);
+
+  if (!req.body) {
+    return res
+      .status(400)
+      .json({ status: "error", message: "Request body missing" });
+  }
+
   const { username, email, password } = req.body;
 
   if (!username || !email || !password) {
-    return res.status(400).json({ status: "error", message: "All fields required" });
+    return res
+      .status(400)
+      .json({ status: "error", message: "All fields required" });
   }
 
   try {
     const hashedPassword = await bcrypt.hash(password.trim(), 10);
+
     const newUser = new User({
       username: username.trim(),
       email: email.trim(),
@@ -25,9 +35,12 @@ export const signup = async (req, res) => {
 
     res.json({ status: "success", message: "User created" });
   } catch (err) {
-    res.status(500).json({ status: "error", message: "Signup failed", error: err.message });
+    res
+      .status(500)
+      .json({ status: "error", message: "Signup failed", error: err.message });
   }
 };
+
 
 // ------------------- LOGIN -------------------
 export const login = async (req, res) => {
