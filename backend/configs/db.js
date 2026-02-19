@@ -1,5 +1,4 @@
 import mongoose from "mongoose";
-import { $where } from "../models/User";
 
 const connectDB = async () => {
   try {
